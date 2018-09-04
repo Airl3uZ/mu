@@ -1,12 +1,14 @@
+---
+
 environments:
-- name: acceptance
-- name: production
+  - name: acceptance
+    provider: ecs-fargate
+  - name: production
+    provider: ecs-fargate
+
 service:
-  name: extension
+  name: ecs-fargate-example
+  healthEndpoint: /
   port: 80
-  healthendpoint: /
   pathPatterns:
-  - /*
-  pipeline:
-    source:
-      repo: git@github.com:airl3uz/mu
+    - /*
