@@ -1,0 +1,12 @@
+environments:
+- name: acceptance
+- name: production
+service:
+  name: extension
+  port: 80
+  healthendpoint: /
+  pathPatterns:
+  - /*
+  pipeline:
+    source:
+      repo: git@github.com:airl3uz/mu
